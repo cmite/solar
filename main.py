@@ -19,43 +19,52 @@ if __name__ == "__main__":
         Planet(
             name="Mercury",
             orbit=Orbit(a=57.9*m_km, e=0.20564),
-            radius=4.879*k_km
+            radius=4.879*k_km,
+            color='brown'
         ),
         Planet(
             name="Venus",
             orbit=Orbit(a=108.2*m_km, e=0.00678),
-            radius=12.104*k_km
+            radius=12.104*k_km,
+            color='pink'
         ),
         Planet(
             name="Earth",
             orbit=Orbit(a=152.0*m_km, e=0.01671123),
-            radius=12.742*k_km
+            radius=12.742*k_km,
+            color='blue'
         ),
         Planet(
             name="Mars",
             orbit=Orbit(a=228.0*m_km, e=0.09339),
-            radius=6.779*k_km
+            radius=6.779*k_km,
+            color='red'
         ),
         Planet(
             name="Jupiter",
             orbit=Orbit(a=778.3*m_km, e=0.04939),
-            radius=139.820*k_km
-        ),
-        Planet(
-            name="Uranus",
-            orbit=Orbit(a=2870.7*m_km, e=0.04726),
-            radius=50.724*k_km
-        ),
-        Planet(
-            name="Neptune",
-            orbit=Orbit(a=4498.4*m_km, e=0.00859),
-            radius=49.244*k_km
+            radius=139.820*k_km,
+            color='orange'
         ),
         Planet(
             name="Saturn",
             orbit=Orbit(a=1426.7*m_km, e=0.0539),
-            radius=116.460*k_km
-        )
+            radius=116.460*k_km,
+            color='yellow'
+        ),
+        Planet(
+            name="Uranus",
+            orbit=Orbit(a=2870.7*m_km, e=0.04726),
+            radius=50.724*k_km,
+            color='blue'
+        ),
+        Planet(
+            name="Neptune",
+            orbit=Orbit(a=4498.4*m_km, e=0.00859),
+            radius=49.244*k_km,
+            color='navy'
+        ),
+        
     ]
 
     for planet in planets:
@@ -70,7 +79,7 @@ if __name__ == "__main__":
         circle = plt.Circle(
             (ellipse[0, r], ellipse[1, r]),
             radius=planet.radius*scaling,
-            color='white'
+            color=planet.color
         )
         plt.gca().add_artist(circle)
         plt.gca().annotate(
