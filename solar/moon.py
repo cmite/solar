@@ -1,18 +1,17 @@
 from random import randrange
-from typing import List
 from solar.orbit import Orbit
-from solar.moon import Moon
 
 
-class Planet:
-    """Planet class."""
+class Moon:
+    """Define Moons."""
 
-    def __init__(self, name: str, orbit: Orbit, radius: float, color: str = "white"):
+    def __init__(self, name: str, orbit: Orbit, radius: float, color: str):
         self.name = name
-        self.orbit = orbit
         self.radius = radius
+        self.orbit = orbit
         self.color = color
         self.random_index = randrange(100)
+
 
     def elliptic_orbit(self):
         """Returns the elliptic orbit."""
